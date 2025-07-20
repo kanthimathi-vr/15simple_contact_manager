@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Contacts</h1>
+
+<form method="POST" action="{{ url_for('add_contact') }}" class="form">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="phone" placeholder="Phone" required>
+    <input type="text" name="city" placeholder="City" required>
+    <button type="submit">Add Contact</button>
+</form>
+
+<div class="filter-bar">
+    <span>Filter by city:</span>
+    <a href="{{ url_for('home') }}" class="filter-btn {% if not selected_city %}active{% endif %}">All</a>
+    {% for city in cities %}
+        <a href="{{ url_for('home') }}?city={{ city }}" class="filter-btn {% if selected_city == city %}active{% endif %}">{{ city }}</a>
+    {% endfor %}
+</div>
+
+<ul class="contact-list">
+    {% for contact in contacts %}
+        <li class="contact-item">
+            <a href="{{ url_for('contact_detail', contact_id=contact.id) }}">
+                <strong>{{ contact.name }}</strong><br>
+                <small>{{ contact.city }}</small>
+            </a>
+        </li>
+    {% else %}
+        <p>No contacts found.</p>
+    {% endfor %}
+</ul>
+{% endblock %}
