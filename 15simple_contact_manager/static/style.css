@@ -1,0 +1,195 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #dcdada;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 1s ease;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: #2d2c2c;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    color: #f0f0f0;
+    font-size: 1.8em;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: #ff4c4c;
+}
+
+/* ===== Container ===== */
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: slideDown 0.6s ease;
+}
+
+/* ===== Forms ===== */
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.form input,
+.form button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+.form input {
+    flex: 1 1 180px;
+    background-color: #9b9999;
+    color: #f0f0f0;
+}
+
+.form input::placeholder {
+    color: #fcf6f6;
+}
+
+.form button {
+    background-color: #ff4c4c;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #e63c3c;
+}
+
+/* ===== Filter Buttons ===== */
+.filter-bar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 5px;
+    background-color: #333;
+    color: #ddd;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #555;
+    color: white;
+}
+
+/* ===== Contact List ===== */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    animation: fadeIn 1s ease;
+}
+
+.contact-item {
+    background-color: #1e1e1e;
+    border-left: 5px solid #ff4c4c;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.contact-item a {
+    color: #f0f0f0;
+    text-decoration: none;
+    display: block;
+}
+
+.contact-item a:hover {
+    color: #ffffff;
+}
+
+/* ===== Detail Page ===== */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #ff4c4c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background-color: #1f1f1f;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 600px) {
+    .form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form input {
+        width: 100%;
+    }
+}

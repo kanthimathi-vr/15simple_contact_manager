@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{{ contact.name }}</h2>
+<p><strong>Email:</strong> {{ contact.email }}</p>
+<p><strong>Phone:</strong> {{ contact.phone }}</p>
+<p><strong>City:</strong> {{ contact.city }}</p>
+<a href="{{ url_for('home') }}" class="back-link">← Back to contacts</a>
+{% endblock %}
